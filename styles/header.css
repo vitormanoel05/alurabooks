@@ -1,0 +1,59 @@
+.cabecalho {
+    background-color: var(--branco);
+    display: flex; /* o "displey flex" transformou o cabeçalho em uma flex-container e seus filhos (divs) viraram flex-itens */
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* para conseguir movimentar o menu hamburguer */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1rem;
+}
+
+.cabecalho_menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block; /* se fosse "inline" não permitiria os ajustes de width e height */
+}
+
+.lista-menu {
+    display: none;
+    position: absolute; /* para se movimentar de acordo com o cabeçalho */
+    top: 100%; /* tirou 100% do cabeçalho e ficou abaixo do cabeçalho */
+    width: 60vw;
+}
+/* pseudo-classe: checked | "~" combinador CSS, mais próximo de uma condicional */
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1rem;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    text-transform: uppercase;
+}
+
+.container__botao {
+    display: none;
+}
