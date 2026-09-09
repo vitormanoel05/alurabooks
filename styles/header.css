@@ -94,4 +94,13 @@
     .cabecalho_menu-hamburguer, .container__imagem--transparente {
         display: none;
     }
+
+    .opcoes__botao:checked ~ .lista-menu{
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
 }
